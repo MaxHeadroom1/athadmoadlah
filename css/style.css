@@ -16,6 +16,7 @@ td{
   font-family: nfmed;
   font-size: 25px;
   box-sizing: unset;
+  max-width:300px
 }
 tbody{
   box-sizing: unset;
