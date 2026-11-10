@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 290" width="380" height="290">
+<title>Clariflocculator plan</title>
+<defs>
+  <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path fill="#5946ce" d="M0 0 6 3 0 6z"/></marker>
+</defs>
+<circle cx="185" cy="134" r="100" fill="#d6e6ff" stroke="#4539a1" stroke-width="3"/>
+<circle cx="185" cy="134" r="91" fill="#eaf2ff" stroke="#6a5ce2" stroke-width="2" stroke-dasharray="5 3"/>
+<circle cx="185" cy="134" r="46" fill="#ddd4ff" stroke="#5946ce" stroke-width="3"/>
+<g fill="none" stroke="#5946ce" stroke-width="3" marker-end="url(#arrow)"><path d="M13 134H136"/><path d="M237 134H268"/><path d="M185 84V53"/><path d="M287 134H361"/></g>
+<g fill="#1d2553" font-family="Arial, sans-serif" text-anchor="middle">
+  <text x="57" y="121" font-size="14">Influent</text>
+  <text x="334" y="121" font-size="14">Effluent</text>
+  <text x="185" y="129" font-size="13" font-weight="bold">Flocculation</text>
+  <text x="185" y="146" font-size="12">inner zone</text>
+  <text x="185" y="201" font-size="13" font-weight="bold">Sedimentation</text>
+  <text x="185" y="217" font-size="12">outer annulus</text>
+  <text x="185" y="271" font-size="14">Outlet weir around perimeter</text>
+</g>
+<path d="M185 252V238" stroke="#5946ce" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

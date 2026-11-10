@@ -1,0 +1,89 @@
+:root {
+  font-family: Cairo, Tahoma, Arial, sans-serif;
+  color: #161c46;
+  background: #eef2ff;
+  --panel: #fff;
+  --ink: #161c46;
+  --sub: #526180;
+  --violet: #5144cb;
+  --stroke: #d8ddf4;
+  --tint: #f5f3ff;
+  --formula: #eeebff;
+  --hero: linear-gradient(105deg, #f9faff, #eef0ff 57%, #dfe6ff);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1.25rem; }
+body { margin: 0; line-height: 1.85; background: radial-gradient(ellipse at 88% 2%, #e8eafb, transparent 38%), linear-gradient(#f5f7ff, #eef2ff); }
+h1, h2, h3, h4, p, figure { margin-block: 0 0.75rem; }
+h1, h2, h3, h4 { line-height: 1.45; }
+h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); }
+h3 { font-size: 1.15rem; }
+a { color: var(--violet); text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid #8065ef; outline-offset: 3px; }
+[dir="ltr"] { unicode-bidi: isolate; }
+p[lang="en"], .en { text-align: left; font-family: Arial, Tahoma, sans-serif; line-height: 1.65; }
+.shell { max-width: 1180px; margin: auto; padding: 18px 16px 56px; }
+.site-nav { background: linear-gradient(115deg, #0e1530, #1c2449); color: white; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between; padding: 12px 22px; border-radius: 20px 20px 0 0; }
+.brand { display: flex; gap: 10px; align-items: center; font-weight: 900; }
+.brand svg { flex: 0 0 32px; }
+.site-nav ul { margin: 0; padding: 0; list-style: none; display: flex; gap: 3px; flex-wrap: wrap; }
+.site-nav a { color: white; display: block; padding: 7px 12px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+.site-nav a:hover, .site-nav a:focus-visible { background: #5144bc; }
+.hero { background: var(--hero); display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .8fr); gap: 24px; align-items: center; padding: 25px 30px; border: 1px solid #d3dcfa; border-radius: 0 0 24px 24px; box-shadow: 0 16px 40px #273a781a; }
+.hero h1 { font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 900; margin: .45rem 0 .2rem; }
+.hero .english-title { font-size: clamp(1.05rem, 3vw, 1.45rem); font-weight: 800; text-align: right; }
+.hero p { color: var(--sub); }
+.hero figure { margin: 0; }
+.hero figure img { width: min(100%, 360px); margin-inline: auto; }
+.actions, .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions { margin-top: 16px; }
+.button { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; min-height: 44px; border-radius: 13px; color: white; background: linear-gradient(105deg,#624cf2,#433bc9); font-weight: 800; text-decoration: none; }
+.button.alt { color: #352d8b; background: #f8f8ff; border: 1px solid #d9d9ff; }
+.tag { display: inline-block; padding: 2px 10px; border-radius: 9px; background: #ebe9ff; color: #4435ab; font-size: .85rem; font-weight: 800; }
+.tag.gold { background: #fff1db; color: #795106; }
+.card { margin-top: 16px; padding: clamp(15px, 3vw, 25px); background: var(--panel); border: 1px solid var(--stroke); border-radius: 22px; box-shadow: 0 6px 22px #35438410; }
+.lead, figcaption, .source { color: var(--sub); }
+.source, figcaption { font-size: .85rem; margin-top: .55rem; }
+.lesson-grid, .pair { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0,1fr)); margin-block: 12px; }
+.lesson-grid > *, .pair > * { min-width: 0; margin: 0; }
+.ar, .en, .diagram { background: var(--tint); border: 1px solid var(--stroke); border-radius: 15px; padding: 14px 16px; }
+.ar p:last-child, .en p:last-child { margin-bottom: 0; }
+.callout { padding: 11px 14px; margin-block: 14px; border-inline-start: 4px solid #6e57ef; background: var(--tint); border-radius: 10px; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--stroke); border-radius: 13px; margin-block: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: .94rem; }
+caption { padding: 9px 12px; text-align: start; background: var(--tint); font-weight: 800; }
+th, td { padding: 8px 12px; text-align: start; vertical-align: top; border-top: 1px solid var(--stroke); }
+th { background: #f9f8ff; }
+td:first-child { font-weight: 700; }
+.nowrap { white-space: nowrap; }
+.eqs { display: grid; gap: 7px; margin-block: 12px; }
+.formula { direction: ltr; overflow-x: auto; text-align: center; background: var(--formula); border: 1px solid #cec8ff; border-radius: 12px; color: #191c67; padding: 11px 9px; }
+math { font-family: "Cambria Math", "STIX Two Math", math; font-size: clamp(1.02rem, 2.1vw, 1.38rem); }
+.flow { padding: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%, 125px), 1fr)); gap: 10px; list-style: none; direction: ltr; counter-reset: flow; }
+.flow li { counter-increment: flow; min-width: 0; padding: 9px 10px; background: #fff; border: 1px solid var(--stroke); border-radius: 11px; font: .9rem/1.5 Arial, sans-serif; }
+.flow li::before { content: counter(flow) " →"; display: block; color: var(--violet); font-weight: 800; margin-bottom: 3px; }
+.flow b { display: block; margin-bottom: 4px; }
+img { display: block; max-width: 100%; height: auto; }
+.diagram img { width: 100%; }
+ol, ul { padding-inline-start: 1.55rem; }
+.steps li { padding-inline-start: .25rem; margin-block: 11px; }
+details { border: 1px solid var(--stroke); border-radius: 13px; margin-top: 9px; }
+summary { cursor: pointer; padding: 11px 13px; min-height: 44px; font-weight: 800; }
+details[open] summary { background: var(--tint); border-radius: 12px 12px 0 0; border-bottom: 1px solid var(--stroke); }
+.solution { padding: 12px 14px 4px; }
+details .en { margin-bottom: 10px; }
+footer { text-align: center; color: var(--sub); margin-top: 24px; }
+.skip { position: absolute; inset-inline-start: 1rem; top: -100px; z-index: 1; }
+.skip:focus { top: 1rem; }
+@media (max-width: 630px) {
+  .shell { padding: 10px 10px 35px; }
+  .hero { grid-template-columns: 1fr; gap: 8px; padding: 19px 16px; }
+  .hero figure img { max-width: min(100%, 250px); }
+  .lesson-grid, .pair { grid-template-columns: 1fr; }
+  .card { border-radius: 16px; }
+  .site-nav { padding: 9px 13px; }
+  .site-nav a { padding-inline: 8px; }
+  th, td { padding: 7px 8px; }
+}
+#filter-section img { max-width: 640px; margin-inline: auto; }

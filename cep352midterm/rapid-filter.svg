@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 295" width="480" height="295">
+<title>Rapid sand filter section showing downward filtration and upward backwash</title>
+<defs>
+  <marker id="down" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path fill="#3c38aa" d="M0 0 5 2.5 0 5z"/></marker>
+  <marker id="up" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path fill="#007888" d="M0 0 5 2.5 0 5z"/></marker>
+</defs>
+<rect x="78" y="53" width="325" height="184" rx="5" fill="#eef4ff" stroke="#322c80" stroke-width="3"/>
+<path fill="#cce6ff" d="M80 77H401V145H80z"/>
+<path fill="#fff1b4" d="M80 145H401V192H80z"/>
+<path fill="#ddcaad" d="M80 192H401V214H80z"/>
+<path fill="#d6ddff" d="M80 214H401V235H80z"/>
+<path d="M85 93h51v12h-51m258-12h51v12h-51" fill="#fff" stroke="#5446ab" stroke-width="2"/>
+<g fill="none" stroke="#3c38aa" stroke-width="4" marker-end="url(#down)"><path d="M9 77h63"/><path d="M144 104v105"/><path d="M153 236v25h-66"/></g>
+<g fill="none" stroke="#007888" stroke-width="4" marker-end="url(#up)"><path d="M330 219V110"/><path d="M344 98H466"/><path d="M466 263H331v-26"/></g>
+<g fill="#1d2553" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+<text x="57" y="63">Inlet</text><text x="357" y="77">Wash gutter</text><text x="439" y="121">Waste</text>
+<text x="239" y="126">Water above bed</text><text x="239" y="173">Sand</text><text x="239" y="208">Gravel</text>
+<text x="239" y="230">Underdrains</text><text x="88" y="282">Filtered water</text><text x="408" y="282">Wash water in</text>
+<text x="125" y="30" fill="#3c38aa" font-weight="bold">Filtration ↓</text><text x="344" y="30" fill="#007888" font-weight="bold">Backwash ↑</text>
+</g>
+</svg>

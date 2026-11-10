@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e1530">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="مراجعة ميدتيرم CEP352s هندسة صحية: المحاضرات 1–4 وحلول امتحانات 2022 و2023 و2025">
+  <title>CEP352s | مراجعة ميدتيرم الهندسة الصحية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip button" href="#main">ادخل على المحتوى</a>
+<div class="shell">
+  <header>
+    <nav class="site-nav" aria-label="أقسام المراجعة">
+      <span class="brand" lang="en" dir="ltr"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#6352db"/><path d="M16 6c3 5 7 9 7 13a7 7 0 0 1-14 0c0-4 4-8 7-13Z" fill="#e4e6ff"/><path d="M12 20c1 2 2 3 4 3" fill="none" stroke="#6352db" stroke-width="1.5"/></svg>Engineering Study Hub</span>
+      <ul><li><a href="#priority">خطة المراجعة</a></li><li><a href="#lectures">المحاضرات</a></li><li><a href="#exams">أسئلة السنين</a></li></ul>
+    </nav>
+    <div class="hero">
+      <div>
+        <div class="tags"><span class="tag" lang="en" dir="ltr">CEP352s</span><span class="tag gold">ميدتيرم</span></div>
+        <h1>الهندسة الصحية</h1>
+        <p class="english-title" lang="en" dir="ltr">Sanitary Engineering</p>
+        <p>مراجعة معالجة المية من المأخذ لحد الفلتر والتطهير، مع خطوات الحل والشيكات اللي تكتبها في ورقة الامتحان.</p>
+        <p><strong>الأربعاء 11 نوفمبر 2026 · 12:30 ظهرًا بتوقيت القاهرة</strong></p>
+        <div class="actions"><a class="button" href="#shared-clarifloc">ابدأ بمسألة الترسيب المتكررة</a><a class="button alt" href="#exams">حل امتحانات السنين</a></div>
+      </div>
+      <figure><img src="clarifloc.svg" width="380" height="290" alt="مسقط أفقي يوضح التلبيد في المركز والترسيب في الحلقة المحيطة"></figure>
+    </div>
+  </header>
+  <main id="main">
+    <section class="card" id="priority">
+      <h2>تبدأ بإيه؟</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>تكرار الموضوعات في الورق المرفق</caption>
+          <thead><tr><th scope="col">الموضوع</th><th scope="col">ظهر في</th><th scope="col">اللي تتمرن عليه</th></tr></thead>
+          <tbody>
+            <tr><td><a href="#shared-clarifloc">الترسيب الدائري</a></td><td>2022 س2 · 2023 س3 · 2025 س4</td><td>صمّم منطقتين في الـ<bdi lang="en" dir="ltr">Clariflocculator</bdi>، واعكس الحساب لو الأبعاد معطاة.</td></tr>
+            <tr><td><a href="#l4">الفلاتر السريعة</a></td><td>2022 س3 · 2023 س4 · 2025 س2</td><td>عدد الشغال والاحتياطي، الغسيل العكسي، ورسم الفلتر ومكانه في المحطة.</td></tr>
+            <tr><td><a href="#l2">أعمال السحب وتصرف التصميم</a></td><td>2023 س1–2 · 2025 س1 و3</td><td>ارسم سلسلة السحب، احفظ أسباب اختيار الموقع، وحدد أقل سعة بين المواسير والطلمبات.</td></tr>
+            <tr><td><a href="#theory">النظري القصير</a></td><td>س1 في التلات سنين</td><td>الاستهلاك، كفاءة الترسيب والترشيح، والترويب والترسيب الكيميائي.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="callout"><strong>قبل التعويض</strong> اكتب الوحدة جنب كل تصرف. لو المحطة شغّالة <bdi>20 h/d</bdi>، اقسم حجم اليوم على 20 عشان تطلع تصرف ساعة التشغيل. لو بتحوّل معدل تحميل مُعرَّف على أساس 24 ساعة لوحدة الساعة، اقسم المعدل نفسه على 24 زي أمثلة المحاضرتين 3 و4.</p>
+    </section>
+
+    <div id="lectures">
+      <section class="card" id="l1">
+        <span class="tag">محاضرة 1</span>
+        <h2>الدراسات الأولية واستهلاك المية</h2>
+        <div class="lesson-grid">
+          <div class="ar"><h3>بالمصري</h3><p>قبل ما تصمّم، اسأل المية جاية منين، جودتها إيه، المشروع هيتصمّم لمدة قد إيه، الفرد هيستهلك كام، والسكان هيبقوا كام في آخر المدة. الاستهلاك بيتغيّر خلال اليوم والسنة، فالتصميم بيبدأ من التصرف المناسب لكل وحدة.</p></div>
+          <div class="en" lang="en" dir="ltr"><h3>Basic studies &amp; demand</h3><p>Identify the water source and quality, choose the design period, estimate water use, and forecast population. Convert average demand to the relevant peak before sizing each unit.</p></div>
+        </div>
+        <div class="table-wrap"><table>
+          <caption>معاملات التصرف من المحاضرة</caption>
+          <thead><tr><th scope="col">الحالة</th><th scope="col">المدى × المتوسط</th><th scope="col">القيمة المختارة في السلايد</th></tr></thead>
+          <tbody><tr><td>أقصى شهر <bdi lang="en" dir="ltr">Maximum monthly</bdi></td><td dir="ltr">1.1–1.5</td><td>1.4</td></tr><tr><td>أقصى يوم <bdi lang="en" dir="ltr">Maximum daily</bdi></td><td dir="ltr">1.2–1.8</td><td>1.8</td></tr><tr><td>أقصى ساعة <bdi lang="en" dir="ltr">Maximum hourly</bdi></td><td dir="ltr">1.5–2.5</td><td>2.5</td></tr><tr><td>الأقل <bdi lang="en" dir="ltr">Minimum</bdi></td><td dir="ltr">0.5–0.8</td><td>0.7</td></tr></tbody>
+        </table></div>
+        <div class="eqs">
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>Q</mi><mi>avg</mi></msub><mtext> = </mtext><mfrac><mrow><mtext>P × </mtext><msub><mi>q</mi><mi>avg</mi></msub></mrow><mrow><mtext>1000</mtext></mrow></mfrac><mtext> m³/d</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>Q</mi><mi>mm</mi></msub><mtext> = </mtext><msub><mi>k</mi><mi>mm</mi></msub><mtext> × </mtext><msub><mi>Q</mi><mi>avg</mi></msub></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>Q</mi><mi>d</mi></msub><mtext> = 1.10 × </mtext><msub><mi>Q</mi><mi>mm</mi></msub></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>Q</mi><mi>h</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>Q</mi><mi>d</mi></msub></mrow><mrow><msub><mi>w</mi><mi>p</mi></msub></mrow></mfrac><mtext> m³/h</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><mtext>P = </mtext><mfrac><mrow><mtext>1000 </mtext><msub><mi>Q</mi><mi>d</mi></msub></mrow><mrow><mtext>1.10 </mtext><msub><mi>k</mi><mi>mm</mi></msub><mtext> </mtext><msub><mi>q</mi><mi>avg</mi></msub></mrow></mfrac></mrow></math></div>
+        </div>
+        <p><bdi>P</bdi> عدد السكان، و<bdi>q_avg</bdi> استهلاك الفرد بوحدة <bdi>L/(cap·d)</bdi>، و<bdi>k_mm</bdi> معامل أقصى شهر. <bdi>Q_avg</bdi> و<bdi>Q_mm</bdi> و<bdi>Q_d</bdi> متوسط وأقصى شهر وتصرف التصميم بوحدة <bdi>m³/d</bdi>. <bdi>w_p</bdi> ساعات التشغيل في اليوم و<bdi>Q_h</bdi> تصرف ساعة التشغيل. لو <bdi>Q_d</bdi> متدي صراحةً استخدمه مباشرة. <bdi>1 m³ = 1000 L</bdi>.</p>
+        <details><summary>مراجعة سريعة لتوقع السكان والحريق</summary><div class="solution">
+          <p>الحسابية بتضيف زيادة ثابتة كل سنة. الهندسية بتضيف زيادة ثابتة على لوغاريتم السكان. طريقة النمو بتضرب في معامل سنوي، وطريقة الكثافة مناسبة للمدن الجديدة. في مثال 2010–2050، ابدأ بـ125,000 نسمة و40 سنة.</p>
+          <div class="eqs"><div class="formula" dir="ltr"><math><mrow><msub><mi>P</mi><mi>f</mi></msub><mtext> = </mtext><msub><mi>P</mi><mi>p</mi></msub><mtext> + </mtext><msub><mi>K</mi><mi>a</mi></msub><mtext> × Δt</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><mtext>ln(</mtext><msub><mi>P</mi><mi>f</mi></msub><mtext>) = ln(</mtext><msub><mi>P</mi><mi>p</mi></msub><mtext>) + </mtext><msub><mi>K</mi><mi>g</mi></msub><mtext> × Δt</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>P</mi><mi>f</mi></msub><mtext> = </mtext><msub><mi>P</mi><mi>p</mi></msub><mtext> × (1 + </mtext><mfrac><mrow><mtext>r</mtext></mrow><mrow><mtext>100</mtext></mrow></mfrac><mtext>)^Δt</mtext></mrow></math></div></div>
+          <p><bdi>P_f / P_p</bdi> سكان المستقبل والحاضر، و<bdi>Δt</bdi> فرق السنين، و<bdi>K_a</bdi> متوسط الزيادة السنوية بالأشخاص، و<bdi>K_g</bdi> متوسط تغير اللوغاريتم في السنة، و<bdi>r</bdi> نسبة النمو السنوي بالمية. نتايج التعويض <bdi>187,400 / 246,735 / 276,005</bdi> نسمة بالترتيب باستخدام <bdi>K_g = 0.017</bdi> زي السلايد. القيمة المطبوعة للهندسية في السلايد <bdi>246,718</bdi>، والفرق بسيط بسبب التقريب في الحساب.</p>
+          <p>حسب افتراض الحريق في المحاضرة، الهيدرنت <bdi>60 m³/h</bdi> لمدة ساعتين. احسب <bdi>120 m³</bdi> لكل 10,000 نسمة حتى 500,000 نسمة، و<bdi>240 m³</bdi> لكل 10,000 لو العدد أكبر.</p>
+        </div></details>
+        <p class="source">محاضرة 1 · صفحات 3–13 من ملف المحاضرة.</p>
+      </section>
+
+      <section class="card" id="l2">
+        <span class="tag">محاضرة 2</span>
+        <h2>أعمال سحب المياه السطحية</h2>
+        <div class="lesson-grid">
+          <div class="ar"><h3>بالمصري</h3><p>المأخذ يجمع المية ويحجز العوالق الكبيرة بالشبك. المواسير توصلها للبيارة، والبيارة توزّعها على الطلمبات. الطلمبات ترفع المية الخام، وخط الطرد يسلّمها لأول حوض في المحطة.</p></div>
+          <div class="en" lang="en" dir="ltr"><h3>Collection works</h3><p>The intake screens raw water. Conduits carry it to the sump, which feeds the pumps evenly. Low-lift pumps add head, and the transmission line delivers water to the first treatment unit.</p></div>
+        </div>
+        <figure class="diagram" id="intake-flow">
+          <ol class="flow" lang="en" dir="ltr">
+            <li><b>River / canal</b>Surface source</li><li><b>Intake structure</b>Collect and screen</li><li><b>Intake conduits</b>Carry raw water</li><li><b>Raw water sump</b>Feed pumps evenly</li><li><b>Low-lift pumps</b>Raise the water</li><li><b>Transmission line</b>Deliver to plant</li>
+          </ol>
+          <figcaption>رسم لمسار السحب ووظيفة كل جزء، معاد من محاضرة 2 ص2 وص7–9.</figcaption>
+        </figure>
+        <div class="table-wrap"><table>
+          <caption>نوع المأخذ حسب المصدر</caption>
+          <thead><tr><th scope="col">النوع</th><th scope="col">إمتى تستخدمه؟</th></tr></thead>
+          <tbody>
+            <tr><td lang="en" dir="ltr">Pipe intake</td><td>نهر واسع وعميق، منسوب متغيّر أو شاطئ ملوّث.</td></tr>
+            <tr><td lang="en" dir="ltr">Shore intake</td><td>ترعة ضيقة وضحلة، والشاطئ نضيف.</td></tr>
+            <tr><td lang="en" dir="ltr">Submerged intake</td><td>ترعة ضيقة وعميقة، والشاطئ ملوّث.</td></tr>
+            <tr><td lang="en" dir="ltr">Tower intake</td><td>مشروعات كبيرة على بحيرة أو نهر فيه فرق مناسيب كبير.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="eqs">
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>A</mi><mi>p</mi></msub><mtext> = </mtext><mfrac><mrow><mtext>π D²</mtext></mrow><mrow><mtext>4</mtext></mrow></mfrac></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><mtext>D = √(</mtext><mfrac><mrow><mtext>4 </mtext><msub><mi>Q</mi><mi>s</mi></msub></mrow><mrow><mtext>n π v</mtext></mrow></mfrac><mtext>)</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>v</mi><mi>normal</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>Q</mi><mi>s</mi></msub></mrow><mrow><mtext>n </mtext><msub><mi>A</mi><mi>p</mi></msub></mrow></mfrac></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>v</mi><mi>outage</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>Q</mi><mi>s</mi></msub></mrow><mrow><mtext>(n − 1) </mtext><msub><mi>A</mi><mi>p</mi></msub></mrow></mfrac></mrow></math></div>
+        </div>
+        <p><bdi>Q_s</bdi> تصرف التصميم بـ<bdi>m³/s</bdi>، و<bdi>A_p</bdi> مساحة مقطع ماسورة واحدة بـ<bdi>m²</bdi>، و<bdi>D</bdi> قطرها بالمتر، و<bdi>n</bdi> عدد المواسير، و<bdi>v</bdi> السرعة بـ<bdi>m/s</bdi>. اختار قطر فعلي وشيّك على <bdi>0.6–1.5 m/s</bdi> في التشغيل و<bdi>≤ 2.5 m/s</bdi> عند خروج ماسورة واحدة. عدد مواسير المأخذ ≥ 2.</p>
+        <details><summary>مثال المحاضرة · التصميم من 220,000 نسمة لحد خط الطرد</summary><div class="solution">
+          <ol class="steps">
+            <li>الاستهلاك <bdi>200 L/(cap·d)</bdi>، إذن <bdi>Q_avg = 44,000</bdi> و<bdi>Q_mm = 61,600</bdi> و<bdi>Q_d = 67,760 m³/d = 0.7843 m³/s</bdi> على 24 ساعة.</li>
+            <li>ابدأ بماسورتين عند <bdi>1 m/s</bdi>، يطلع قطر نظري <bdi>0.707 m</bdi>. اختار <bdi>700 mm</bdi> وشيّك <bdi>1.02 m/s</bdi> عادي و<bdi>2.04 m/s</bdi> مع خروج ماسورة.</li>
+            <li>4 طلمبات شغّالة تحتاج كل واحدة <bdi>196.1 L/s</bdi>، اختار <bdi>200 L/s</bdi> وأضف 2 احتياطي (50%). للبيارة استخدم زمن 5 دقائق، فيطلع <bdi>235.3 m³</bdi>. عند طول 15 م وعرض 4 م يبقى العمق <bdi>3.92 m</bdi>، أكبر من <bdi>53 − 0.11 − 50 + 0.5 = 3.39 m</bdi>.</li>
+            <li>خط طرد واحد عند سرعة مبدئية <bdi>1.2 m/s</bdi> يطلع قطره حوالي <bdi>0.91 m</bdi>. اختار <bdi>900 mm</bdi> وشيّك <bdi>1.23 m/s</bdi>. الرأس الساكن <bdi>75 − 53 + 5 = 27 m</bdi>، والفواقد حسب المثال <bdi>0.11 + 9.62 = 9.73 m</bdi>، يبقى الرأس الكلي <bdi>36.73 m</bdi>.</li>
+          </ol>
+          <div class="eqs">
+            <div class="formula" dir="ltr"><math><mrow><msub><mi>h</mi><mi>f</mi></msub><mtext> = </mtext><mfrac><mrow><mtext>f L v²</mtext></mrow><mrow><mtext>2 g D</mtext></mrow></mfrac></mrow></math></div>
+            <div class="formula" dir="ltr"><math><mrow><msub><mi>h</mi><mi>s</mi></msub><mtext> = </mtext><mfrac><mrow><mtext>ΣK v²</mtext></mrow><mrow><mtext>2 g</mtext></mrow></mfrac></mrow></math></div>
+            <div class="formula" dir="ltr"><math><mrow><msub><mi>H</mi><mi>T</mi></msub><mtext> = </mtext><msub><mi>H</mi><mi>static</mi></msub><mtext> + </mtext><msub><mi>h</mi><mi>f</mi></msub><mtext> + </mtext><msub><mi>h</mi><mi>s</mi></msub></mrow></math></div>
+          </div>
+          <p><bdi>h_f</bdi> فواقد احتكاك و<bdi>h_s</bdi> فواقد ثانوية بالمتر، و<bdi>L</bdi> طول الماسورة، و<bdi>f</bdi> معامل دارسي، و<bdi>K</bdi> معاملات الفواقد الثانوية، و<bdi>g = 9.81 m/s²</bdi>. لخط الطرد، السلايد بيستخدم <bdi lang="en" dir="ltr">Hazen–Williams</bdi> بـ<bdi>h_f = 10.675 L (Q_s/C)^1.852 D^−4.87</bdi>، و<bdi>C = 120</bdi> في المثال. اجمع فواقد المأخذ والطرد في الرأس الديناميكي.</p>
+        </div></details>
+        <p class="source">محاضرة 2 · صفحات 2–12، خصوصًا ص3 للموقع وص7–9 للتصميم.</p>
+      </section>
+
+
+      <section class="card" id="l3">
+        <span class="tag">محاضرة 3</span>
+        <h2>الترسيب والترويب والـ<bdi lang="en">Clariflocculator</bdi></h2>
+        <div class="lesson-grid">
+          <div class="ar"><h3>بالمصري</h3><p>الحبيبات التقيلة بتنزل بالجاذبية لو المية هديت. العوالق الدقيقة محتاجة مادة مروِّبة تقلّل استقرارها، وبعدين تقليب هادي يجمعها في كتل أكبر. في الحوض الدائري المشترك، التلبيد في القلب والترسيب في الحلقة اللي حواليه.</p></div>
+          <div class="en" lang="en" dir="ltr"><h3>Sedimentation and flocculation</h3><p>Gravity settles heavy particles. Rapid mixing spreads the coagulant and destabilizes fine particles. Gentle mixing grows flocs. In a clariflocculator, the flocs settle as the water moves outward to the weir.</p></div>
+        </div>
+        <div class="pair">
+          <figure class="diagram"><img src="clarifloc.svg" width="380" height="290" loading="lazy" alt="دخول المية من المركز، وحركة شعاعية ناحية هدّار المحيط"><figcaption>مسقط مبسّط معاد رسمه من محاضرة 3 ص14. الحلقة بين القطرين هي مساحة الترسيب.</figcaption></figure>
+          <div class="ar"><h3>حوض الترسيب المثالي</h3><p>المدخل يوزّع المية بالتساوي، منطقة الترسيب تهدّيها، الهدّار يسحب المية الصافية ويضبط المنسوب، والقاع المائل يجمع الحمأة ناحية الحفرة. في المستطيل السريان أفقي، وفي الدائري شعاعي من المركز للمحيط.</p><p>افترض سريان طبقي بسرعة أفقية منتظمة، من غير مناطق ميتة أو مسارات قصيرة، مع توزيع كويس عند المدخل والمخرج.</p></div>
+        </div>
+        <div class="table-wrap"><table>
+          <caption>معايير الحوض المشترك في المحاضرة</caption>
+          <thead><tr><th scope="col">المتغير</th><th scope="col">المركز / Inner</th><th scope="col">الخارج / Outer</th></tr></thead>
+          <tbody>
+            <tr><td>زمن المكوث</td><td>20–40 دقيقة</td><td>زمن التلبيد + 2–4 ساعات ترسيب لحساب الحجم الكلي</td></tr>
+            <tr><td>العمق</td><td><bdi>d_i = 2–3 m</bdi></td><td><bdi>d_o = d_i + 0.5–1 m</bdi></td></tr>
+            <tr><td>القطر والعدد</td><td colspan="2"><bdi>D_o ≤ 40 m</bdi>، وعدد الأحواض <bdi>n ≥ 2</bdi>.</td></tr>
+            <tr><td>التحميل والسرعة</td><td colspan="2"><bdi>SLR = 25–40 m³/(m²·d)</bdi>، و<bdi>HLOW = 150–300 m³/(m·d)</bdi>، و<bdi>v_hz ≤ 0.3 m/min</bdi>، ونسبة حجم المركز 15–25%.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="eqs">
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>V</mi><mi>i</mi></msub><mtext> = </mtext><msub><mi>Q</mi><mi>h</mi></msub><mtext> </mtext><msub><mi>T</mi><mi>i</mi></msub><mtext> ; </mtext><msub><mi>V</mi><mi>o</mi></msub><mtext> = </mtext><msub><mi>Q</mi><mi>h</mi></msub><mtext> (</mtext><msub><mi>T</mi><mi>i</mi></msub><mtext> + </mtext><msub><mi>T</mi><mi>s</mi></msub><mtext>)</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>A</mi><mi>i</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>V</mi><mi>i</mi></msub></mrow><mrow><msub><mi>d</mi><mi>i</mi></msub></mrow></mfrac><mtext> ; </mtext><msub><mi>A</mi><mi>o</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>V</mi><mi>o</mi></msub></mrow><mrow><msub><mi>d</mi><mi>o</mi></msub></mrow></mfrac></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><mtext>D = √(</mtext><mfrac><mrow><mtext>4 A</mtext></mrow><mrow><mtext>n π</mtext></mrow></mfrac><mtext>)</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><mtext>SLR = </mtext><mfrac><mrow><mtext>24 </mtext><msub><mi>Q</mi><mi>h</mi></msub></mrow><mrow><msub><mi>A</mi><mi>o</mi></msub><mtext> − </mtext><msub><mi>A</mi><mi>i</mi></msub></mrow></mfrac><mtext> ; HLOW = </mtext><mfrac><mrow><mtext>24 </mtext><msub><mi>Q</mi><mi>h</mi></msub></mrow><mrow><mtext>n π </mtext><msub><mi>D</mi><mi>o</mi></msub></mrow></mfrac></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>v</mi><mi>hz</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>Q</mi><mi>h</mi></msub></mrow><mrow><mtext>60 n </mtext><msub><mi>d</mi><mi>o</mi></msub><mtext> π (</mtext><msub><mi>D</mi><mi>i</mi></msub><mtext> + 1 m)</mtext></mrow></mfrac></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><mtext>%</mtext><msub><mi>V</mi><mi>i</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>D</mi><mi>i</mi></msub><mtext>² </mtext><msub><mi>d</mi><mi>i</mi></msub></mrow><mrow><msub><mi>D</mi><mi>o</mi></msub><mtext>² </mtext><msub><mi>d</mi><mi>o</mi></msub></mrow></mfrac><mtext> × 100</mtext></mrow></math></div>
+        </div>
+        <p><bdi>T_i</bdi> زمن التلبيد و<bdi>T_s</bdi> زمن الترسيب بالساعات. <bdi>V_i, V_o</bdi> حجما المركز والإجمالي، و<bdi>A_i, A_o</bdi> المساحتان الكليتان لكل الأحواض. <bdi>D_i, D_o</bdi> قطرا المركز والخارج لكل حوض و<bdi>d_i, d_o</bdi> العمقان. <bdi>SLR</bdi> تحميل المساحة الفعلية للترسيب، و<bdi>HLOW</bdi> تحميل طول الهدّار، و<bdi>v_hz</bdi> السرعة الأفقية؛ إضافة المتر في معادلتها من طريقة المحاضرة. في حوض الترسيب العادي استخدم كل المساحة المتاحة للترسيب.</p>
+        <p class="source">محاضرة 3 · ص3–7 للترسيب العادي، ص8–13 للترويب، وص14–15 للتصميم.</p>
+      </section>
+
+      <section class="card" id="l4">
+        <span class="tag">محاضرة 4</span>
+        <h2>الترشيح والغسيل العكسي</h2>
+        <div class="lesson-grid">
+          <div class="ar"><h3>بالمصري</h3><p>الفلتر بيشيل العوالق اللي فاضلة. في الفلتر السريع المية بتنزل خلال طبقات الرمل والزلط، ومع الوقت الفراغات بتتسد وفقد الضغط يعلى. وقت الغسيل اقلب اتجاه المية لأعلى، واجمع المية الوسخة في مزاريب الغسيل. بعد الغسيل وجّه أول ناتج للصرف لحد ما الجودة ترجع.</p></div>
+          <div class="en" lang="en" dir="ltr"><h3>Rapid sand filtration</h3><p>Water flows down through sand and gravel to the underdrains. When head loss rises, reverse the flow to flush trapped solids into the wash gutters. Send the first filtrate to waste before returning the unit to service.</p></div>
+        </div>
+        <figure class="diagram" id="filter-section">
+          <img src="rapid-filter.svg" width="480" height="295" loading="lazy" alt="قطاع فلتر سريع فيه مية فوق الرمل والزلط ونظام تجميع تحتهم، بأسهم الترشيح لأسفل والغسيل لأعلى">
+          <figcaption>قطاع مبسّط معاد رسمه من محاضرة 4 ص7–10.</figcaption>
+        </figure>
+        <div class="table-wrap"><table>
+          <caption>مقارنة الفلتر البطيء والسريع</caption>
+          <thead><tr><th scope="col">البند</th><th scope="col" lang="en" dir="ltr">Slow sand</th><th scope="col" lang="en" dir="ltr">Rapid sand</th></tr></thead>
+          <tbody>
+            <tr><td>المعدل</td><td><bdi>3–8 m³/(m²·d)</bdi></td><td><bdi>100–200 m³/(m²·d)</bdi></td></tr>
+            <tr><td>مكان الحجز</td><td>الطبقة السطحية <bdi lang="en" dir="ltr">Dirty skin</bdi></td><td>خلال عمق الرمل</td></tr>
+            <tr><td>التنضيف</td><td>كشط الطبقة العليا</td><td>غسيل عكسي</td></tr>
+            <tr><td>زمن التنضيف</td><td>8–30 يوم</td><td>25–35 دقيقة للعملية كلها</td></tr>
+            <tr><td>التشغيل بين غسلتين</td><td>2–6 شهور</td><td>12–36 ساعة</td></tr>
+            <tr><td>المعالجة قبل الفلتر في الرسم</td><td>ترسيب عادي</td><td>ترسيب كيميائي</td></tr>
+          </tbody>
+        </table></div>
+        <p>الحجز الميكانيكي، والترسيب بين الحبيبات، والامتزاز، والتأثير الكهربي، والتأثير البيولوجي هي آليات الترشيح في السلايد. لما العكارة منخفضة، المحاضرة بتعرض <bdi lang="en" dir="ltr">Direct filtration</bdi>؛ مع حمل عوالق أعلى استخدم ترسيب قبل الفلتر لتقليل الانسداد.</p>
+        <div class="eqs">
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>A</mi><mi>work</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>Q</mi><mi>h</mi></msub></mrow><mrow><msub><mi>ROF</mi><mi>h</mi></msub></mrow></mfrac><mtext> ; </mtext><msub><mi>n</mi><mi>work</mi></msub><mtext> = ⌈</mtext><mfrac><mrow><msub><mi>A</mi><mi>work</mi></msub></mrow><mrow><mtext>L B</mtext></mrow></mfrac><mtext>⌉</mtext></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>ROF</mi><mi>h</mi></msub><mtext> = </mtext><mfrac><mrow><msub><mi>ROF</mi><mi>d</mi></msub></mrow><mrow><mtext>24</mtext></mrow></mfrac></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><msub><mi>W</mi><mi>d</mi></msub><mtext> = ROW × </mtext><mfrac><mrow><msub><mi>t</mi><mi>w</mi></msub></mrow><mrow><mtext>60</mtext></mrow></mfrac><mtext> × L B × </mtext><msub><mi>n</mi><mi>w</mi></msub><mtext> × </mtext><msub><mi>f</mi><mi>w</mi></msub></mrow></math></div>
+          <div class="formula" dir="ltr"><math><mrow><mtext>%W = </mtext><mfrac><mrow><msub><mi>W</mi><mi>d</mi></msub></mrow><mrow><msub><mi>Q</mi><mi>d</mi></msub></mrow></mfrac><mtext> × 100</mtext></mrow></math></div>
+        </div>
+        <p><bdi>A_work</bdi> المساحة المطلوبة للشغال بالمتر المربع، و<bdi>L, B</bdi> طول وعرض الفلتر. <bdi>ROF_h, ROF_d</bdi> معدل الترشيح على أساس الساعة واليوم، و<bdi>ROW</bdi> معدل الغسيل بوحدة <bdi>m³/(m²·h)</bdi>، و<bdi>t_w</bdi> مدة الغسلة بالدقايق، و<bdi>n_w</bdi> عدد الفلاتر اللي بتتغسل، و<bdi>f_w</bdi> مرات الغسيل لكل فلتر في اليوم، و<bdi>W_d</bdi> إجمالي مية الغسيل في اليوم. <strong>قرّب عدد الفلاتر الشغّالة لفوق</strong>، وبعدين زوّد 2 احتياطي لو الشغّال ≤10، أو 4 لو أكتر من 10. لو مفيش مدة تشغيل معطاة واستخدمت <bdi>ROF_d</bdi> مباشرة، اقسم تصرف اليوم على المعدل اليومي.</p>
+        <details><summary>خطوات التشغيل والغسيل · ص10</summary><div class="solution">
+          <ol class="steps">
+            <li><bdi>V2 + V3</bdi> لتفريغ الفلتر، واقفل دخول المية <bdi>V1</bdi>.</li>
+            <li><bdi>V4</bdi> لهوا مضغوط يحرّك الرواسب.</li>
+            <li><bdi>V5 + V3</bdi> لمية الغسيل المضغوطة وصرفها من المزاريب.</li>
+            <li><bdi>V1 + V6</bdi> لإرجاع الترشيح مع توجيه المية الأولى للصرف.</li>
+            <li><bdi>V1 + V2</bdi> للتشغيل العادي. باقي المحابس مقفولة في كل خطوة حسب جدول المحاضرة.</li>
+          </ol>
+        </div></details>
+        <p class="source">محاضرة 4 · ص1–4 للمبادئ والكفاءة، وص5–13 للأنواع والتشغيل والتصميم.</p>
+      </section>
+    </div>
+
+    <section class="card" id="exams">
+      <h2>اتدرّب على أسئلة السنين</h2>
+      <p class="lead">الأسئلة بالإنجليزي المبسّط. جرّب الحل على ورقة، وبعدين افتح خطوات الحل. الدرجات زي الورقة الأصلية.</p>
+      <div class="actions"><a class="button alt" href="#y22">2022</a><a class="button alt" href="#y23">2023</a><a class="button alt" href="#y25">2025</a><a class="button alt" href="#theory">إجابات النظري</a></div>
+    </section>
+
+    <section class="card" id="shared-clarifloc">
+      <div class="tags"><span class="tag gold">المسألة المتكررة</span><span class="tag">2023 س3 · 2025 س4 · 8 درجات</span></div>
+      <h2>تصميم الـ<bdi lang="en">Clariflocculators</bdi></h2>
+      <p class="en" lang="en" dir="ltr">Design clariflocculators for a 90,000 m³/day plant running 20 h/day. Flocculation takes 0.5 h and settling takes 2.5 h. The surface loading limit is 40 m³/(m²·day) and the outlet weir limit is 300 m³/(m·day).</p>
+      <details><summary>اظهر التصميم وخمس شيكات بعد التقريب</summary><div class="solution">
+        <ol class="steps">
+          <li><strong>ظبّط التصرف.</strong> السعة معطاة بالفعل. <bdi>Q_h = 90,000 ÷ 20 = 4,500 m³/h</bdi>. وقت المكوث يحتاج ده، ومقارنة التحميل اليومي تتبع طريقة السلايد <bdi>4,500 × 24 = 108,000 m³/d</bdi> كمكافئ لمعدل التشغيل.</li>
+          <li><strong>احسب حجمين.</strong> المركز <bdi>V_i = 4,500 × 0.5 = 2,250 m³</bdi>. الإجمالي لحد القطر الخارجي <bdi>V_o = 4,500 × (0.5 + 2.5) = 13,500 m³</bdi>. حجم الترسيب وحده <bdi>11,250 m³</bdi>.</li>
+          <li><strong>افترض الأعماق من المدى.</strong> <bdi>d_i = 2.5 m</bdi> و<bdi>d_o = 3.0 m</bdi>. إذن <bdi>A_i = 2,250 ÷ 2.5 = 900 m²</bdi> و<bdi>A_o = 13,500 ÷ 3 = 4,500 m²</bdi>. مساحة الحلقة قبل التقريب <bdi>3,600 m²</bdi>.</li>
+          <li><strong>اختار عدد وقطر الأحواض.</strong> عند أقصى قطر <bdi>40 m</bdi>، مساحة الحوض <bdi>1,256.64 m²</bdi>. <bdi>4,500 ÷ 1,256.64 = 3.58</bdi> فاختار 4 أحواض. من <bdi>√(4A/(nπ))</bdi>، القطر الخارجي <bdi>37.85 m</bdi> والداخلي <bdi>16.93 m</bdi>. اعتمد <bdi>38 m</bdi> و<bdi>17 m</bdi>.</li>
+        </ol>
+        <div class="table-wrap"><table>
+          <caption>الشيكات على الأبعاد المعتمدة</caption>
+          <thead><tr><th scope="col">الاختبار</th><th scope="col">النتيجة</th><th scope="col">المطلوب</th></tr></thead>
+          <tbody>
+            <tr><td>مساحة الحلقة والتحميل <bdi lang="en" dir="ltr">SLR</bdi></td><td><bdi>A_o − A_i = 3,628.54 m²</bdi><br><bdi>108,000 ÷ 3,628.54 = 29.76 m³/(m²·d)</bdi></td><td><bdi>≤ 40</bdi></td></tr>
+            <tr><td>طول الهدّار والتحميل <bdi lang="en" dir="ltr">HLOW</bdi></td><td><bdi>4π × 38 = 477.52 m</bdi><br><bdi>108,000 ÷ 477.52 = 226.17 m³/(m·d)</bdi></td><td><bdi>≤ 300</bdi></td></tr>
+            <tr><td>السرعة الأفقية</td><td><bdi>(4,500 ÷ 60) ÷ (4 × 3 × π × 18) = 0.111 m/min</bdi></td><td><bdi>≤ 0.3 m/min</bdi></td></tr>
+            <tr><td>نسبة الحجم الداخلي</td><td><bdi>(17² × 2.5) ÷ (38² × 3) × 100 = 16.68%</bdi></td><td>15–25%</td></tr>
+            <tr><td>زمن المكوث بعد التقريب</td><td><bdi>T_i ≈ 0.504 h</bdi>، و<bdi>T_s ≈ 2.520 h</bdi> من <bdi>(V_o − V_i) ÷ Q_h</bdi>.</td><td>0.5 ساعة تلبيد و2.5 ساعة ترسيب على الأقل.</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>النتيجة</strong> 4 أحواض، لكل حوض قطر داخلي 17 م وخارجي 38 م، وعمق داخلي 2.5 م وخارجي 3 م.</p><p class="en" lang="en" dir="ltr">Use four tanks. Each has a 17 m inner diameter, a 38 m outer diameter, and depths of 2.5 m and 3 m respectively. The rounded dimensions pass all five checks.</p>
+      </div></details>
+      <p class="source">امتحان أبريل 2023 س3 · امتحان نوفمبر 2025 س4 · طريقة محاضرة 3 ص14–15.</p>
+    </section>
+
+    <section class="card" id="y22">
+      <span class="tag">أبريل 2022 · 60 دقيقة · 20 درجة</span>
+      <h2>امتحان 2022</h2>
+      <p><strong>س1 · درجتين.</strong> ناقش اتنين من <a href="#t-demand">عوامل الاستهلاك</a>، <a href="#t-sed">كفاءة الترسيب</a>، <a href="#t-coag">الترويب</a>، <a href="#t-disinfection">التطهير وطرقه</a>.</p>
+
+      <h3>س2 · أقصى سكان تخدمهم 4 مرسّبات (8 درجات)</h3>
+      <p class="en" lang="en" dir="ltr">Four circular clarifiers are 25 m in diameter and 3 m deep. Average use is 200 L per person per day. Maximum monthly demand is 1.5 times average demand. Find the maximum population served.</p>
+      <details><summary>اظهر الحل · السعة الحاكمة</summary><div class="solution">
+        <ol class="steps">
+          <li>اعتبر تشغيل 24 ساعة لأن السؤال سايب مدة التشغيل. استخدم حدود تصميم الترسيب العادي في محاضرة 3 ص7. مساحة الأحواض <bdi>4π(25²)/4 = 1,963.50 m²</bdi>، والحجم <bdi>5,890.49 m³</bdi>، والهدّار المحيطي الكلي <bdi>4π × 25 = 314.16 m</bdi>.</li>
+          <li>السعة من تحميل السطح <bdi>40 × 1,963.50 = 78,540 m³/d</bdi>، ومن الهدّار <bdi>300 × 314.16 = 94,248 m³/d</bdi>. من أقل زمن مكوث (ساعتين) <bdi>Q_d = (5,890.49 ÷ 2) × 24 = 70,686 m³/d</bdi>. زمن المكوث هو الحاكم.</li>
+          <li>شيّك عند التصرف الحاكم. <bdi>SLR = 36 m³/(m²·d)</bdi>، و<bdi>HLOW = 225 m³/(m·d)</bdi>. مساحة المقطع حسب السلايد <bdi>4π × 12.5 × 3 = 471.24 m²</bdi>، فالسرعة <bdi>(70,685.83 ÷ 1,440) ÷ 471.24 ≈ 0.104 m/min</bdi>، تحت <bdi>0.3 m/min</bdi>.</li>
+          <li>ارجع للسكان عن طريق <bdi>Q_d = 1.1 × 1.5 × P × 200 ÷ 1,000</bdi>. النتيجة <strong>214,199 نسمة كحد أقصى</strong> بعد التقريب لتحت. لو افترضت سعة المحطة مساوية لأقصى شهر مباشرةً، من غير معامل 1.1 اللي في المحاضرة، النتيجة 235,619 نسمة.</li>
+        </ol>
+      </div></details>
+
+      <h3>س3 · تصميم الفلاتر والغسيل والرسم (10 درجات)</h3>
+      <p class="en" lang="en" dir="ltr">A plant serves 200,000 people and runs 20 h/day. Average use is 200 L per person per day and the maximum monthly factor is 1.5. Design rapid sand filters at 150 m³/(m²·day). Wash at five times the filtration rate, for 10 minutes once a day per filter. Find the wash-water percentage and sketch the filter.</p>
+      <details><summary>اظهر الحل · المساحة والشغّال والاحتياطي</summary><div class="solution">
+        <ol class="steps">
+          <li><bdi>Q_avg = 200,000 × 200 ÷ 1,000 = 40,000 m³/d</bdi>، و<bdi>Q_mm = 60,000 m³/d</bdi>. باستخدام معامل المحاضرة <bdi>Q_d = 66,000 m³/d</bdi>، إذن <bdi>Q_h = 3,300 m³/h</bdi>.</li>
+          <li>حوّل معدل الترشيح <bdi>ROF_h = 150 ÷ 24 = 6.25 m³/(m²·h)</bdi>، إذن المساحة المطلوبة <bdi>3,300 ÷ 6.25 = 528 m²</bdi>.</li>
+          <li>اختار <bdi>8 × 6 m</bdi> (48 متر مربع ونسبة طول لعرض <bdi>1.33</bdi>). <bdi>528 ÷ 48 = 11</bdi> شغّال. بما إن 11 أكبر من 10، أضف 2 للغسيل و2 للصيانة، فيبقى الإجمالي <strong>15 فلتر</strong>.</li>
+          <li>معدل الغسيل حسب السؤال <bdi>ROW = 5 × 6.25 = 31.25 m³/(m²·h)</bdi>. غسلة الوحدة <bdi>31.25 × (10 ÷ 60) × 48 = 250 m³</bdi>. اغسل الـ15 مرة لكل وحدة على مدار اليوم، فيطلع <bdi>3,750 m³/d</bdi>. النسبة لسعة التصميم <bdi>3,750 ÷ 66,000 × 100 ≈ 5.68%</bdi>.</li>
+          <li>للجزء (ب)، ارسم <a href="#filter-section">قطاع الفلتر</a> وسمّي المدخل، المية فوق الرمل، الرمل، الزلط، المصارف السفلية، المخرج، مدخل الغسيل ومزاريب الصرف. حط سهم الترشيح لأسفل وسهم الغسيل لأعلى.</li>
+        </ol>
+      </div></details>
+    </section>
+
+    <section class="card" id="y23">
+      <span class="tag">أبريل 2023 · 60 دقيقة · 20 درجة</span>
+      <h2>امتحان 2023</h2>
+      <p><strong>س1 · 3 درجات.</strong> ناقش اتنين من <a href="#t-studies">الدراسات الأولية</a>، <a href="#t-intake">اختيار المأخذ</a>، <a href="#t-coag">الترسيب الكيميائي</a>، <a href="#t-filter">كفاءة الترشيح</a>.</p>
+      <p><strong>س2 · 3 درجات.</strong> ارسم <a href="#intake-flow">خط أعمال السحب للمياه السطحية</a> واكتب وظيفة كل عنصر. لو عايز تفصيل للمأخذ، ضيف إن الشبك بيحمي المواسير من الانسداد والمأخذ بيحمي ميول الجسور حسب المحاضرة.</p>
+      <p><strong>س3 · 8 درجات.</strong> <a href="#shared-clarifloc">مسألة تصميم الترسيب المشترك بسعة 90,000 م³/يوم</a>.</p>
+      <h3>س4 · كفاية 8 فلاتر ومية الغسيل (6 درجات)</h3>
+      <p class="en" lang="en" dir="ltr">A plant has eight rapid sand filters, 8 m × 6 m each. Can it serve 250,000 people at 180 L per person per day? Use Qmm = 1.4 Qavg, Qd = 1.1 Qmm and filtration at 200 m³/(m²·day). Find any extra units needed and the wash-water percentage. Each filter is washed once daily at 25 m³/(m²·h) for 10 minutes.</p>
+      <details><summary>اظهر الحل · مع فصل الشغّال عن الاحتياطي</summary><div class="solution">
+        <ol class="steps">
+          <li><bdi>Q_avg = 250,000 × 180 ÷ 1,000 = 45,000 m³/d</bdi>، ثم <bdi>Q_mm = 63,000 m³/d</bdi>، ثم <bdi>Q_d = 69,300 m³/d</bdi>.</li>
+          <li>مساحة الوحدة <bdi>48 m²</bdi> وسعتها <bdi>48 × 200 = 9,600 m³/d</bdi>. المطلوب <bdi>69,300 ÷ 9,600 = 7.21875</bdi>، يعني 8 شغّالة.</li>
+          <li>لو الثمانية دول إجمالي المحطة، خصّص 1 للغسيل و1 للصيانة حسب السلايد. سعة الستة الشغّالة <bdi>57,600 m³/d</bdi> وده أقل من المطلوب. زوّد <strong>فلترين</strong>، ويبقى الإجمالي 10 (8 تشغيل + 2 احتياطي).</li>
+          <li>مية غسلة الوحدة <bdi>25 × (10 ÷ 60) × 48 = 200 m³</bdi>. بعد التوسعة <bdi>10 × 200 = 2,000 m³/d</bdi>، والنسبة لسعة التصميم <bdi>2,000 ÷ 69,300 × 100 ≈ 2.89%</bdi>.</li>
+        </ol>
+        <p class="callout">لو بتفحص السعة اللحظية وكل الفلاتر شغّالة مع بعض، الثمانية يعدّوا <bdi>76,800 m³/d</bdi> وده يكفي من ناحية التصرف. لو حسبت غسيل الثمانية الحاليين فقط يطلع <bdi>1,600 m³/d</bdi>، أو <bdi>2.31%</bdi> من <bdi>69,300 m³/d</bdi>. اكتب تعريفك لسعة المحطة في الحل.</p>
+      </div></details>
+    </section>
+
+    <section class="card" id="y25">
+      <span class="tag">نوفمبر 2025 · 60 دقيقة · 20 درجة</span>
+      <h2>امتحان 2025</h2>
+      <p><strong>س1 · 4 درجات.</strong> ناقش اتنين من <a href="#t-demand">عوامل الاستهلاك</a>، <a href="#t-intake">اختيار المأخذ</a>، <a href="#t-coag">مزايا الترسيب الكيميائي</a>، <a href="#t-filter">كفاءة الترشيح</a>.</p>
+      <p><strong>س2 · 3 درجات.</strong> ارسم <a href="#plant-flow">خط محطة الترشيح السريع</a> واكتب غرض كل مرحلة.</p>
+      <h3>س3 · أقصى سكان من المواسير والطلمبات (5 درجات)</h3>
+      <p class="en" lang="en" dir="ltr">A plant has four 500 mm intake conduits and six raw-water pumps rated at 200 L/s each. Find the maximum population at 250 L per person per day and Qmm = 1.4 Qavg.</p>
+      <details><summary>اظهر الحل · قارن السعات وحدد العنصر الحاكم</summary><div class="solution">
+        <ol class="steps">
+          <li>مساحة كل ماسورة <bdi>π × 0.5² ÷ 4 = 0.19635 m²</bdi>. أقصى تصرف مع أربع مواسير عند <bdi>1.5 m/s</bdi> هو <bdi>1.17810 m³/s</bdi>. حد خروج واحدة <bdi>3 × 0.19635 × 2.5 = 1.47262 m³/s</bdi>. الأقل يحكم المواسير.</li>
+          <li>لو الستة إجمالي المركّب، أكبر عدد شغّال مع احتياطي لا يقل عن 50% من الشغّال هو 4 شغّال + 2 احتياطي، زي مثال المحاضرة. سعة الطلمبات <bdi>4 × 0.200 = 0.800 m³/s</bdi>. يبقى الطلمبات بتحكم. عند التصرف ده سرعة المأخذ <bdi>1.019 m/s</bdi>، أو <bdi>1.358 m/s</bdi> مع خروج ماسورة.</li>
+          <li>على افتراض تشغيل 24 ساعة، <bdi>Q_d = 0.8 × 86,400 = 69,120 m³/d</bdi>. عوّض في العلاقة تحت، وقرّب عدد السكان لتحت.</li>
+        </ol>
+        <div class="eqs"><div class="formula" dir="ltr"><math><mrow><mtext>P = </mtext><mfrac><mrow><mtext>69,120 × 1,000</mtext></mrow><mrow><mtext>1.10 × 1.40 × 250</mtext></mrow></mfrac><mtext> ≈ 179,532</mtext></mrow></math></div></div>
+        <p class="callout">عدد الاحتياطي وساعات التشغيل مش مذكورين في الورقة. لو الستة كلهم شغّالين، سعة الضخ <bdi>1.2 m³/s</bdi> والمواسير تحكم بـ<bdi>1.17810 m³/s</bdi>، فتطلع <strong>264,383 نسمة</strong> على 24 ساعة. لو اخترت <bdi>1.0 m/s</bdi> من خطوة السرعة المبدئية، دي حالة تشغيل محددة للمواسير وسعتها <bdi>0.7854 m³/s</bdi>، أي حوالي 176,255 نسمة. لطلب أقصى سعة، استخدم حد التشغيل الآمن مع شيك خروج ماسورة.</p>
+      </div></details>
+      <p><strong>س4 · 8 درجات.</strong> <a href="#shared-clarifloc">نفس تصميم الترسيب المشترك في 2023</a>.</p>
+    </section>
+
+
+    <section class="card" id="plant-flow">
+      <h2>رسم محطة الترشيح السريع</h2>
+      <figure class="diagram">
+        <ol class="flow" lang="en" dir="ltr">
+          <li><b>Intake + low-lift pumps</b>Collect and lift raw water.</li>
+          <li><b>Coagulant + flash mixer</b>Disperse the chemical and destabilize particles.</li>
+          <li><b>Flocculation</b>Mix gently to grow flocs.</li>
+          <li><b>Sedimentation</b>Settle flocs and withdraw sludge.</li>
+          <li><b>Rapid sand filters</b>Remove the remaining suspended solids.</li>
+          <li><b>Disinfection</b>Inactivate pathogens.</li>
+          <li><b>Ground reservoirs</b>Hold treated water before distribution.</li>
+          <li><b>Distribution network</b>Deliver water. Elevated tanks help maintain pressure.</li>
+        </ol>
+        <figcaption>من رسم المحطة الحديثة في محاضرة 3 ص2 ومحاضرة 4 ص4. ممكن ترسم التلبيد والترسيب جوّه دائرة واحدة كحوض مشترك.</figcaption>
+      </figure>
+      <p>في الرسم القديم في السلايد، حوض الترسيب العادي قبل فلتر رملي بطيء. في الرسم الحديث ضيف مادة الترويب والخلط السريع قبل الحوض، والتطهير بعد الفلاتر وقبل خزانات المية الأرضية.</p>
+    </section>
+
+    <section class="card" id="theory">
+      <h2>إجابات النظري القصيرة</h2>
+      <p class="lead">لكل عامل اكتب تأثيره في جملة قصيرة. افتح السؤال بعد ما تحاول تعدّد النقاط من الذاكرة.</p>
+      <details id="t-studies"><summary>الدراسات الأولية لمشروع مياه الشرب · 2023</summary><div class="solution">
+        <p class="en" lang="en" dir="ltr">Study the source, water quality, design period, consumption, and present and future population.</p>
+        <ol><li>المصدر وكفايته على مدار السنة، زي النهر أو المية الجوفية.</li><li>الجودة والملوّثات عشان تختار المعالجة المناسبة.</li><li>مدة التصميم، حسب عمر المكوّنات وإمكانية التوسّع والصيانة والتمويل.</li><li>استهلاك الفرد وتصرفات الذروة عشان تحجّم كل جزء.</li><li>سكان دلوقتي والسكان المتوقعين عند نهاية مدة التصميم.</li></ol>
+        <p class="source">محاضرة 1 · ص3–9.</p>
+      </div></details>
+      <details id="t-demand"><summary>عوامل استهلاك المياه · 2022 و2025</summary><div class="solution">
+        <p class="en" lang="en" dir="ltr">Demand varies with domestic uses, population, living standards, water quality, network pressure, climate, price, and sewerage facilities.</p>
+        <p>اذكر الاستعمالات المنزلية وحجم المجتمع ومستوى المعيشة، وجودة المية، وضغط الشبكة، والمناخ، وسعر المية، وتوفّر الصرف الصحي. أمثلة للتفسير: الجو الحر يرفع الاستهلاك، والضغط الأعلى ممكن يزوّد التدفق والتسرب، والسعر يأثر على نمط الاستخدام.</p>
+        <p class="source">محاضرة 1 · ص5.</p>
+      </div></details>
+      <details id="t-intake"><summary>اختيار مكان المأخذ · 2023 و2025</summary><div class="solution">
+        <p class="en" lang="en" dir="ltr">Choose a clean, straight reach upstream of the city, away from wastewater outlets. Check dry-season supply, flood access, future expansion, and distance to the plant.</p>
+        <ul><li>قبل المدينة في اتجاه جريان المية، وبعيد عن مصبات الصرف، وفي أنضف جزء من المصدر.</li><li>على قطاع مستقيم لتقليل مشاكل الترسيب والنحر. منطقة الحماية حسب السلايد 150 م ناحية المنبع و50 م ناحية المصب.</li><li>قريب من المحطة عشان تقل تكلفة النقل، ويسمح بتوسّع السحب مستقبلًا.</li><li>يفضل يقدر يسحب عند أقل منسوب في موسم الجفاف، ويفضل سهل الوصول وقت الفيضان من غير ما يتغمر.</li></ul>
+        <p class="source">محاضرة 2 · ص3.</p>
+      </div></details>
+      <details id="t-sed"><summary>عوامل كفاءة الترسيب · 2022</summary><div class="solution">
+        <p class="en" lang="en" dir="ltr">Settling depends on the particles, water properties, detention time, basin dimensions, flow and weir loading, inlet and outlet layout, and sludge removal.</p>
+        <ul><li>حجم وشكل وتركيز وكثافة العوالق. الحبيبات الأكبر والأكثف غالبًا تترسّب أسرع.</li><li>حرارة المية ولزوجتها وكثافتها وسرعة السريان. اللزوجة الأعلى بتبطّأ نزول الجسيمات.</li><li>زمن المكوث ونسب أبعاد الحوض، وتحميل السطح وتحميل الهدّار.</li><li>توزيع المدخل والمخرج يقلّل المسارات القصيرة، وسحب الحمأة يمنع رجوعها مع المية.</li></ul>
+        <p class="source">محاضرة 3 · ص3 وص6.</p>
+      </div></details>
+      <details id="t-coag"><summary>الترويب والترسيب الكيميائي ومزاياه · 2022 و2023 و2025</summary><div class="solution">
+        <p class="en" lang="en" dir="ltr">Add a coagulant such as alum and mix it quickly. Gentle mixing grows the destabilized particles into flocs. The flocs settle faster, improving turbidity removal and allowing smaller tanks.</p>
+        <ol><li><bdi lang="en" dir="ltr">Coagulation</bdi>. أضف الشبّة أو مركب حديد بالجرعة المناسبة واعمل خلط سريع يوزّع المادة ويقلّل تنافر العوالق. حدّد الجرعة باختبار <bdi lang="en" dir="ltr">Jar test</bdi>.</li><li><bdi lang="en" dir="ltr">Flocculation</bdi>. قلّب بهدوء عشان الحبيبات تتجمّع وتكبر. التقليب العنيف لفترة طويلة ممكن يكسّرها.</li><li><bdi lang="en" dir="ltr">Sedimentation</bdi>. اهدّي السريان عشان الكتل تنزل وتتجمع كحمأة.</li></ol>
+        <p>المزايا من السلايد هي تقليل زمن الترسيب وأبعاد الحوض، رفع كفاءة إزالة العكارة، وتحسين اللون والطعم والرائحة. الجرعة ونوع المادة ودرجة الحموضة والحرارة وتركيز العوالق وطريقة الخلط من عوامل نجاح الترويب.</p>
+        <p class="source">محاضرة 3 · ص8–13.</p>
+      </div></details>
+      <details id="t-filter"><summary>عوامل كفاءة الترشيح · 2023 و2025</summary><div class="solution">
+        <p class="en" lang="en" dir="ltr">Consider media type and size, bed depth, filtration rate, influent quality, water depth above the bed, allowed head loss, and cleaning.</p>
+        <p>الوسط وحجم حبيباته، وعمق الوسط، ومعدل الترشيح، وجودة المية الداخلة، وعمق المية فوق الرمل، وأقصى فقد ضغط مسموح، وطريقة التنضيف. عمق الوسط الأكبر ممكن يحسّن الجودة لكنه يزود الفقد. حمل عوالق أعلى يسرّع الانسداد. المحاضرة بتربط زيادة المعدل بقِصر مدة التشغيل.</p>
+        <div class="eqs"><div class="formula" dir="ltr"><math><mrow><mtext>T ∝ </mtext><mfrac><mrow><mtext>1</mtext></mrow><mrow><mtext>ROF^1.5</mtext></mrow></mfrac></mrow></math></div></div>
+        <p><bdi>T</bdi> مدة التشغيل قبل التنضيف، و<bdi>ROF</bdi> معدل الترشيح.</p>
+        <p class="source">محاضرة 4 · ص4.</p>
+      </div></details>
+      <details id="t-disinfection"><summary>التطهير وطرقه · 2022</summary><div class="solution">
+        <p class="en" lang="en" dir="ltr">Disinfection inactivates pathogens after filtration. Chlorine can leave a protective residual. Ozone and UV can disinfect at the plant, with a separate residual disinfectant used where protection in the network is needed.</p>
+        <p>بعد الترشيح بنعطّل الكائنات الممرِضة بالتطهير. الكلور بعد وقت تلامس مناسب ممكن يسيب متبقّي يحمي المية في الشبكة. الأوزون مطهّر مؤكسد، والأشعة فوق البنفسجية بتعطّل الميكروبات جوّه وحدة التطهير. الأوزون والأشعة محتاجين مطهّر له متبقّي لو مطلوب حماية خلال التوزيع.</p>
+        <p class="source">محاضرة 3 · ص1–2 لمكان المرحلة. طرق التطهير مكمّلة من <a href="https://www.epa.gov/sites/default/files/2015-09/documents/q4.pdf" lang="en" dir="ltr">U.S. EPA · Drinking Water Disinfection</a>.</p>
+      </div></details>
+    </section>
+
+    <section class="card" id="sources">
+      <h2>مراجع المراجعة</h2>
+      <p>محاضرات <bdi>CEP352s</bdi> من 1 إلى 4، وورق ميدتيرم كلية الهندسة بجامعة عين شمس في أبريل 2022 وأبريل 2023 ونوفمبر 2025. أرقام الصفحات في الشرح هي أرقام صفحات ملفات المحاضرات. الرسومات مبسّطة من السلايدات، والحلول تطبيق لطريقة المحاضرة مع توضيح افتراضات الأسئلة.</p>
+    </section>
+  </main>
+  <footer><a href="#main">ارجع لأول المراجعة</a> · <bdi lang="en">Engineering Study Hub · CEP352s</bdi></footer>
+</div>
+<script>
+  function openLinkedAnswer() {
+    const id = location.hash.slice(1);
+    const answer = document.getElementById(id);
+    if (answer instanceof HTMLDetailsElement) answer.open = true;
+  }
+  window.addEventListener('hashchange', openLinkedAnswer);
+  openLinkedAnswer();
+</script>
+</body>
+</html>
