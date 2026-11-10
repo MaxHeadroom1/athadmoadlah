@@ -292,6 +292,22 @@ function lessonTable(title,headers,rows,note,focus){
  return x;
 }
 function specialNotes(i){
+ if(i===1){
+  return lessonTable('🪨 أشكال الركام — من المحاضرة',['Shape','الصفة','المعنى'],
+   [['Flaky','Thin / مفلطحة','السمك صغير مقارنة بالطول والعرض'],
+    ['Elongated','Long / ممدودة','الطول أكبر بوضوح'],
+    ['Angular','Sharp edges / حادة','الزوايا والحواف حادة'],
+    ['Rounded','Smooth / مدوّرة','حواف دائرية وأكثر نعومة']],
+   'المطلوب في سؤال 2 وصف السُمك الصغير نسبيًا، مش وصف الحواف.',0);
+ }
+ if(i===7){
+  return lessonTable('💧 حالات الرطوبة في الركام — سلايدات 35–36',['الحالة','المسام الداخلية','السطح الخارجي'],
+   [['Oven dry (OD)','جافة تمامًا','جاف'],
+    ['Air dry','فيها جزء من الرطوبة الداخلية','جاف'],
+    ['SSD','المسام مشبعة','جاف'],
+    ['Damp / Wet','المسام مشبعة','عليه ماء حر']],
+   'الـAbsorption محتاج حالة SSD: المسام الداخلية مليانة ماء لكن السطح جاف.',2);
+ }
  if(i===18||i===27){
    return lessonTable('⚗️ مركبات الأسمنت الأساسية — محاضرة الأسمنت',['المركب','الدور الأساسي','تذكُّر سريع'],
    [['C₃S','Early strength','مقاومة مبكرة'],['C₂S','Later strength','مقاومة متأخرة'],['C₃A','Sulfate sensitivity / fast reaction','حساس للكَبريتات'],['C₄AF','Minor contribution / colour','تأثير أقل في المقاومة']],
@@ -457,7 +473,29 @@ function bulkingViz(){
    '<div class="source-disclaimer">Recreated from slide 41 as an explanatory schematic; do not read exact experimental values from the drawn lines.</div></div>';
 }
 
+
+function packingViz(){
+  var s='<svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Void content comparison single sized, poorly graded, well graded aggregate from lecture slide 33">';
+  var labels=['Single-size','Poorly-graded','Well-graded'];
+  for(var k=0;k<3;k++){
+    var x=7+k*118;
+    s+='<rect x="'+x+'" y="38" width="108" height="145" rx="5" fill="#e9eaf5" stroke="#9da6c5"/>';
+    s+='<text x="'+(x+54)+'" y="25" text-anchor="middle" fill="#3b4171" font-size="11" font-family="Arial" font-weight="bold">'+labels[k]+'</text>';
+    for(var row=0;row<6;row++)for(var col=0;col<4;col++){
+      var bx=x+14+col*26+(row%2?6:0),by=51+row*23;
+      var r=k===0?10:k===1?(row%3===0?10:7):((row+col)%3===0?10:7);
+      s+='<circle cx="'+bx+'" cy="'+by+'" r="'+r+'" fill="#eea12f" stroke="#b36c17" stroke-width="1"/>';
+      if(k===2){s+='<circle cx="'+(bx+12)+'" cy="'+(by+10)+'" r="3.5" fill="#f6be52" stroke="#b36c17" stroke-width=".65"/>'}
+    }
+  }
+  s+='</svg>';
+  return '<div class="diagram"><div class="diagram-title">📐 Grading & Void Content — Slide 33</div>'+s+
+   '<div class="caption">Single-size → Poorly-graded → Well-graded</div>'+
+   '<div class="source-disclaimer">Conceptual redraw of the three aggregate packing cases shown on lecture slide 33.</div></div>';
+}
+
 function topicViz(i){
+  if(i===0)return packingViz();
   if(i===12)return bulkingViz();
   var g='',caption='';
   if(i===1){
