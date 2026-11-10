@@ -184,6 +184,23 @@ body.dark-theme .survey p{color:#e2e3ff}
 .lessonTable .tableNote{padding:9px 14px;background:#faf9ff;color:#60688a;font-size:11px;line-height:1.9}
 @media(max-width:640px){.lessonTable table{min-width:350px}.lessonTable th,.lessonTable td{padding:7px 8px;font-size:11px}}
 
+
+.formula{padding:16px 10px!important;font-size:clamp(16px,3vw,23px)!important;text-align:center;white-space:normal;overflow-x:auto}
+.formula .mathRow{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px;direction:ltr;min-width:min-content;line-height:1.4;font-family:Cambria,'Times New Roman',serif}
+.formula .mathRow .frac{flex-shrink:0;margin:0 .15em;vertical-align:middle}
+.formula .mathRow .num,.formula .mathRow .den{font-size:.8em;white-space:nowrap}
+.formulaSymbols{background:#fff;border:1px solid #d9d5fb;border-radius:15px;margin-top:10px;overflow:hidden}
+.symbolTitle{background:#f0efff;color:#4131a9;padding:9px 12px;font-size:13px;font-weight:900}
+.symbolsScroll{overflow-x:auto}
+.formulaSymbols table{width:100%;border-collapse:collapse}
+.formulaSymbols td{padding:8px 6px;border-bottom:1px solid #eeeefe;font-size:11.5px;line-height:1.8}
+.formulaSymbols td:first-child{text-align:center;white-space:nowrap;font:700 15px Cambria,'Times New Roman',serif;color:#40319d}
+.formulaSymbols td:nth-child(2){text-align:right}
+.formulaSymbols td:nth-child(3){text-align:left}
+.formulaSymbols td:last-child{text-align:center;white-space:nowrap;color:#677188;font-size:10.5px}
+.formulaSymbols tr:last-child td{border-bottom:0}
+@media(max-width:560px){.formulaSymbols td{padding:7px 4px;font-size:10px}.formulaSymbols td:first-child{font-size:12px}.formulaSymbols td:last-child{font-size:9px}.formula{font-size:clamp(16px,3.5vw,20px)!important}}
+
 </style>
 </head>
 <body>
@@ -331,27 +348,53 @@ function specialNotes(i){
 }
 
 function stacked(n,d){return '<span class="frac"><span class="num">'+n+'</span><span class="den">'+d+'</span></span>'}
-function mathFor(q,i){
-  var x='';
-  switch(i){
-    case 0:x='Voids (%) = (1 − '+stacked('Bulk density','Particle SG × 1000')+') × 100';break;
-    case 2:x='Na₂O<sub>eq</sub> = Na₂O + 0.64 K₂O';break;
-    case 3:x='ρ<sub>bulk</sub> = '+stacked('M<sub>dry</sub>','V<sub>container</sub>');break;
-    case 4:x='D<sub>max</sub> = min ( '+stacked('b','5')+' , '+stacked('t','3')+' , '+stacked('2S','3')+' )';break;
-    case 5:x='SG<sub>app</sub> = '+stacked('OD','OD − SUB')+' = '+stacked('5000','5000 − 3000')+' = 2.50';break;
-    case 7:x='Absorption (%) = '+stacked('SSD − OD','OD')+' × 100';break;
-    case 14:x='FM = '+stacked('6 + 30 + 42 + 75 + 85 + 100','100')+' = 3.38';break;
-    case 15:x=stacked('d','D')+' = '+stacked('8','32');break;
-    case 16:x='Designation = '+stacked('0','4')+' CP';break;
-    case 17:x=stacked('D','d')+' = '+stacked('32','8')+' = 4 &gt; 2';break;
-    case 20:x='C₃A + Gypsum + H₂O → AFt (Ettringite)';break;
-    case 21:x='CaO + H₂O → Ca(OH)₂';break;
-    case 24:x='C₃A = 2.65A − 1.69F &nbsp; | &nbsp; C₄AF = 3.04F';break;
-    case 25:x='Na₂O<sub>eq</sub> ≤ 0.6%';break;
-    default:x=esc(q.formula||'');break;
-  }
-  return x?'<div class="formula" dir="ltr" aria-label="Engineering formula">'+x+'</div>':'';
+
+var SYMBOLS={
+  0:[['Vᵥ','نسبة الفراغات','Void percentage','%'],['ρᵦ','الكثافة الحجمية للركام','Dry bulk density','kg/m³'],['Gₛ','الكثافة النسبية للحبيبات','Particle specific gravity','—'],['ρw','كثافة الماء (تقريبًا 1000)','Density of water','kg/m³']],
+  2:[['Na₂Oeq','القلويات المكافئة','Equivalent alkalis','%'],['Na₂O','نسبة أكسيد الصوديوم','Sodium oxide content','%'],['K₂O','نسبة أكسيد البوتاسيوم','Potassium oxide content','%'],['0.64','معامل تحويل البوتاسيوم لمكافئ الصوديوم','Equivalence factor','—']],
+  3:[['ρᵦ','الكثافة الحجمية الجافة','Dry bulk density','kg/m³'],['Mᵈ','كتلة الركام الجاف','Oven-dry mass','kg'],['Vᵦ','الحجم الكلي شاملًا الفراغات','Bulk volume including voids','m³']],
+  4:[['Dₘₐₓ','أكبر مقاس مسموح للركام','Maximum aggregate size','mm'],['b','البُعد المحدِّد للعضو','Relevant member dimension','mm'],['t','سُمك العنصر أو البلاطة','Element/slab thickness','mm'],['S','المسافة الصافية بين حديد التسليح','Clear spacing between bars','mm']],
+  5:[['SGₐₚₚ','الكثافة النسبية الظاهرية','Apparent specific gravity','—'],['OD','كتلة العينة الجافة بالفرن','Oven-dry mass','g'],['SUB','الوزن الظاهري للعينة داخل الماء','Submerged apparent mass','g']],
+  7:[['A','نسبة امتصاص الركام','Absorption percentage','%'],['SSD','الكتلة المشبعة داخليًا والسطح جاف','Saturated surface-dry mass','g'],['OD','كتلة الركام الجاف بالفرن','Oven-dry mass','g']],
+  8:[['mm','ملِّيمتر','Millimetre','mm'],['μm','ميكرومتر','Micrometre','μm']],
+  14:[['FM','معامل نعومة الركام','Fineness modulus','—'],['ΣR꜀','مجموع النسب التراكمية المحتجزة','Sum of cumulative retained %','%']],
+  15:[['d','المقاس الأدنى المحدِّد','Lower designation size','mm'],['D','المقاس الأعلى المحدِّد','Upper designation size','mm']],
+  16:[['d/D','تعيين المقاس الأدنى/الأعلى','Aggregate size designation','mm'],['CP','رمل خشن حسب السلايد 53','Coarse sand class','—']],
+  17:[['D','المقاس الأعلى','Upper designation size','mm'],['d','المقاس الأدنى','Lower designation size','mm'],['D/d','نسبة المقاسين في اختبار التدرج','Size ratio for grading','—']],
+  20:[['C₃A','ألومينات ثلاثي الكالسيوم','Tricalcium aluminate','—'],['AFt','إتترنجيت','Ettringite','—']],
+  21:[['CaO','الجير الحر','Free lime','—'],['H₂O','الماء','Water','—'],['Ca(OH)₂','هيدروكسيد الكالسيوم','Calcium hydroxide','—']],
+  24:[['C₃A','نسبة ألومينات ثلاثي الكالسيوم','Tricalcium aluminate','%'],['C₄AF','نسبة ألومينو فيريت رباعي الكالسيوم','Tetracalcium aluminoferrite','%'],['A','نسبة Al₂O₃','Alumina content','%'],['F','نسبة Fe₂O₃','Iron oxide content','%']],
+  25:[['Na₂Oeq','القلويات المكافئة','Equivalent alkalis','%'],['Na₂O','أكسيد الصوديوم','Sodium oxide','%'],['K₂O','أكسيد البوتاسيوم','Potassium oxide','%']]
+};
+function formulaSymbols(i){
+ var rows=SYMBOLS[i];
+ if(!rows)return '';
+ return '<div class="formulaSymbols"><div class="symbolTitle">🔣 الرموز / Symbols</div>'+
+ '<div class="symbolsScroll"><table><tbody>'+rows.map(function(r){return '<tr><td>'+esc(r[0])+'</td><td lang="ar" dir="rtl">'+esc(r[1])+'</td><td lang="en" dir="ltr">'+esc(r[2])+'</td><td>'+esc(r[3])+'</td></tr>'}).join('')+'</tbody></table></div></div>';
 }
+function mathFor(q,i){
+ var x='';
+ switch(i){
+  case 0:x='V<sub>v</sub> (%) = ( 1 − '+stacked('ρ<sub>b</sub>','G<sub>s</sub> · ρ<sub>w</sub>')+' ) × 100';break;
+  case 2:x='Na₂O<sub>eq</sub> = Na₂O + 0.64 K₂O';break;
+  case 3:x='ρ<sub>b</sub> = '+stacked('M<sub>d</sub>','V<sub>b</sub>');break;
+  case 4:x='D<sub>max</sub> = min( '+stacked('b','5')+' , '+stacked('t','3')+' , '+stacked('2S','3')+' )';break;
+  case 5:x='SG<sub>app</sub> = '+stacked('OD','OD − SUB')+' = '+stacked('5000','2000')+' = 2.50';break;
+  case 7:x='A (%) = '+stacked('SSD − OD','OD')+' × 100';break;
+  case 8:x='0.063 mm = 63 μm';break;
+  case 14:x='FM = '+stacked('6+30+42+75+85+100','100')+' = 3.38';break;
+  case 15:x='d / D = 8 / 32';break;
+  case 16:x='d / D = 0 / 4 &nbsp; (CP)';break;
+  case 17:x=stacked('D','d')+' = '+stacked('32','8')+' = 4 &gt; 2';break;
+  case 20:x='C₃A + Gypsum + H₂O → AFt';break;
+  case 21:x='CaO + H₂O → Ca(OH)₂';break;
+  case 24:x='C₃A = 2.65A − 1.69F &nbsp; ; &nbsp; C₄AF = 3.04F';break;
+  case 25:x='Na₂O<sub>eq</sub> = Na₂O + 0.64K₂O ≤ 0.6%';break;
+  default:x=esc(q.formula||'');break;
+ }
+ return x?'<div class="formula" dir="ltr" aria-label="Engineering formula"><div class="mathRow">'+x+'</div></div>'+formulaSymbols(i):'';
+}
+
 function vizFrame(markup,caption){
   return '<div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 212" role="img" aria-label="'+esc(caption)+'">'+
     '<rect width="300" height="212" rx="14" fill="#fbfbff"/>'+markup+'</svg><div class="caption">'+esc(caption)+'</div></div>';
