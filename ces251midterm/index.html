@@ -168,6 +168,22 @@ body.dark-theme .survey p{color:#e2e3ff}
 .diagram-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
 .source-disclaimer{font-size:10px;direction:ltr;text-align:center;color:#65708c;line-height:1.5}
 
+
+.lectureRef{margin:14px 0;padding:12px 15px;border-radius:15px;border:1px solid #dddafc;background:#faf9ff;color:#343267}
+.lectureRef strong{display:block;font-size:12px;color:#4a3acb}
+.lectureRef>div{font:700 12px/1.8 Arial,sans-serif}
+.lectureRef small{font-size:10px;color:#636a8d}
+.lessonTable{margin:15px 0;border:1px solid #dcdcf5;background:#fff;border-radius:16px;overflow:hidden}
+.lessonTable .tableHead{padding:12px 14px;background:#eeedff;font-weight:900;color:#343090}
+.lessonTable .tableScroll{overflow-x:auto}
+.lessonTable table{border-collapse:collapse;width:100%;min-width:410px}
+.lessonTable th,.lessonTable td{padding:9px 11px;font-size:12px;line-height:1.8;text-align:right;border-bottom:1px solid #e5e5f5}
+.lessonTable th{background:#f9f8ff;color:#4c4b80}
+.lessonTable td:first-child{font-weight:800;color:#5142ab}
+.lessonTable tr.focus{background:#edf9f3}
+.lessonTable .tableNote{padding:9px 14px;background:#faf9ff;color:#60688a;font-size:11px;line-height:1.9}
+@media(max-width:640px){.lessonTable table{min-width:350px}.lessonTable th,.lessonTable td{padding:7px 8px;font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -229,6 +245,91 @@ function timefmt(sec){return String(Math.floor(sec/60)).padStart(2,'0')+':'+Stri
 function score(){return qs.reduce(function(sum,q,i){return sum+(s.answers[i]===letters[q.a]?1:0)},0)}
 
 /* Scientific diagrams, properly stacked mathematical fractions, and anonymous feedback */
+
+/* Subject-neutral lesson widgets — reuse with future engineering courses. */
+var aggSlides={
+  0:'Aggregates • slide 33',
+  2:'Aggregates • slide 62',
+  7:'Aggregates • slides 35–36',
+  12:'Aggregates • slides 40–41',
+  13:'Aggregates • slides 42–44',
+  14:'Aggregates • slide 54',
+  15:'Aggregates • slides 47–52',
+  16:'Aggregates • slide 53',
+  17:'Aggregates • slide 52'
+};
+function lectureNote(q,i){
+ var ref=aggSlides[i]||q.slide||q.unit+' lecture';
+ return '<div class="lectureRef"><strong>▤ مرجع الشرح / Lecture reference</strong>'+
+  '<div dir="ltr">'+esc(ref)+'</div><small>الرسوم المعاد رسمها توضح الفكرة المذكورة في السلايد وليست قياسات جديدة.</small></div>';
+}
+function lessonTable(title,headers,rows,note,focus){
+ var x='<section class="lessonTable" dir="rtl"><div class="tableHead">'+title+'</div>'+
+ '<div class="tableScroll"><table><thead><tr>'+headers.map(function(t){return '<th>'+esc(t)+'</th>'}).join('')+'</tr></thead><tbody>'+
+ rows.map(function(row,i){return '<tr'+(i===focus?' class="focus"':'')+'>'+row.map(function(cell){return '<td>'+esc(cell)+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div>'+
+ (note?'<div class="tableNote">'+esc(note)+'</div>':'')+'</section>';
+ return x;
+}
+function specialNotes(i){
+ if(i===12){
+  return lessonTable('📊 اختيارات سؤال 13 وشرح كل اختصار', ['الاختيار','المقارنة بالمنحنى','الزيادة عند 5%'],
+   [['FF','Fine grading · الرمل الناعم · الأحمر','الأعلى ✅'],
+    ['MF','Medium grading · الرمل المتوسط · الأزرق','متوسطة'],
+    ['CF','Coarse grading · الرمل الخشن · الأخضر','الأقل'],
+    ['PF','غير مُعرّف حرفيًا في سلايد 41','ليس منحنى مذكورًا']],
+   'سلايد 41 تستخدم Fine / Medium / Coarse حرفيًا، لا FF/MF/CF/PF. الربط بالاختصارات مبني على سياق اختيارات الامتحان؛ PF لا يمكن تحديد معناه من هذا السلايد.',0)+
+  lessonTable('💧 حالة الرمل وتأثير الماء — سلايد 40', ['الحالة','بالإنجليزي','النتيجة'],
+    [['جاف','Dry','لا توجد طبقات ماء فاصلة'],
+     ['رطب حوالي 4–6%','Damp','طبقات مية رقيقة تباعد الحبيبات ← Bulking كبير'],
+     ['مبلل جدًا','Wet','تتراجع زيادة الحجم']],
+   'القيم تخص سياق الرسم في المحاضرة وليست قانونًا عامًا لكل الرمال.',1);
+ }
+ if(i===2){
+  return lessonTable('🧪 خمس طرق منع ASR — من سلايد 62',['المطلوب','ليه؟'],
+   [['Avoid reactive aggregates','اختيار ركام غير تفاعلي، وفحصه بالأشعة X-ray حسب السلايد'],
+    ['Equivalent alkalis ≤ 0.6','تقليل القلويات المكافئة في الأسمنت'],
+    ['Special isolating system','تقليل تعرض الخرسانة للمية'],
+    ['CEM III/A or III/B','استخدام نوع أسمنت مناسب'],
+    ['Reduce w/c + USE chemical admixture','تقليل المية مع الحفاظ على التشغيل بإضافة مناسبة']],
+    'السؤال بيقول except: الشريحة تقول نستخدم Chemical admixture، مش نقلل استخدامها.',4);
+ }
+ if(i===0){
+  return lessonTable('📋 ماذا يؤثر على Void Content؟ — سلايد 33',['العامل','تأثيره على الرص'],
+    [['Grading','الركام صغير الحجم يملأ الفراغات بين الحبيبات الكبيرة'],
+     ['Shape','الحبيبات المدورة والحادة تتراص بنسب مختلفة'],
+     ['Compaction','الدمك والهز يقللان الفراغات'],
+     ['Specific gravity','خاصية المادة ذاتها، وليست سببًا مباشرًا لتغير الرص']],
+     'تذكّر: الكثافة النسبية تظهر في حساب نسبة الفراغات، لكن ليست عامل الرص المباشر المقصود في السؤال.',3);
+ }
+ if(i===13){
+  return lessonTable('📋 Clay fines — توصيات سلايد 44',['الحالة','التوصية في المحاضرة'],
+   [['High fines in coarse aggregate','يمكن الغسل لتقليل النسبة'],
+    ['High fines in fine aggregate, but no clay','يمكن قبول كميات أكبر وفق الشروط المذكورة'],
+    ['High clay content in fine aggregate','Reject it — ارفض الرمل']],
+   'لا تخلط بين coarse aggregate fines وبين high clay content في الرمل، لأن السؤال عن الحالة الأخيرة.',2);
+ }
+ if(i===14){
+  return lessonTable('📋 خطوات FM على المناخل الستة — سلايد 54',
+    ['Sieve mm','Passing %','Cumulative retained %'],
+    [['4','94','6'],['2','70','30'],['1','58','42'],['0.5','25','75'],['0.25','15','85'],['0.125','0','100']],
+    'FM = (6+30+42+75+85+100)/100 = 3.38. منخل 2.8 مم غير موجود في مجموعة الستة الخاصة بالـFM.');
+ }
+ if(i===16){
+  return lessonTable('📋 تصنيف الرمل من % passing عند 0.500 مم — سلايد 53',['النوع','نسبة المرور','المقصود'],
+   [['CP','5–45%','Coarse sand · خشن'],
+    ['MP','30–70%','Medium sand · متوسط'],
+    ['FP','55–100%','Fine sand · ناعم']],
+    'عندنا 25% passing من منخل 0.5 مم، فالإجابة المعتمدة 0/4 CP. CP/MP/FP تختلف عن اختيارات Q13 CF/MF/FF/PF.',0);
+ }
+ if(i===17){
+  return lessonTable('📋 Graded / Single-size — سلايد 52',['شرط D','Graded','Single-size'],
+   [['D > 11.2 mm','D/d > 2','D/d ≤ 2'],
+    ['D ≤ 11.2 mm','D/d > 4','D/d ≤ 4']],
+   'مثال سؤال 18: D = 32, d = 8, إذن D/d = 4 > 2 ⇒ Graded.',0);
+ }
+ return '';
+}
+
 function stacked(n,d){return '<span class="frac"><span class="num">'+n+'</span><span class="den">'+d+'</span></span>'}
 function mathFor(q,i){
   var x='';
@@ -382,7 +483,7 @@ return '<div class="tagrow">'+label('شرح قبل الحل')+label(q.unit,'navy
   '<section class="en" lang="en" dir="ltr"><h3>✦ Explanation</h3><p>'+esc(q.en)+'</p><p style="font-size:12px;opacity:.8"><b>Topic:</b> '+esc(q.topic)+'</p></section>'+
   topicViz(i)+
   '<section class="ar" lang="ar" dir="rtl"><h3>✦ الشرح بالعربي</h3><p>'+esc(q.ar)+'</p></section>'+
-'</div>'+
+'</div>'+lectureNote(q,i)+specialNotes(i)+
 '<div class="lesson-points">'+
  '<section><h3>✦ أهم النقاط اللي لازم تفهمها</h3><ul class="knowledge">'+q.key.map(function(x){return '<li dir="ltr" style="text-align:left">'+esc(x)+'</li>'}).join('')+'</ul></section>'+
  '<section>'+(q.formula?'<h3>✦ القانون / Formula</h3>'+mathFor(q,i):'<h3>✦ خُلاصة المراجعة</h3><p class="muted">افهم الفكرة من الشرح والرسمة، وبعدها جرب تحل السؤال الأصلي.</p>')+'</section>'+
