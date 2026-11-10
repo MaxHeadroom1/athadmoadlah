@@ -273,7 +273,11 @@ var aggSlides={
   14:'Aggregates • slide 54',
   15:'Aggregates • slides 47–52',
   16:'Aggregates • slide 53',
-  17:'Aggregates • slide 52'
+  17:'Aggregates • slide 52',
+  18:'Cement • slide 25', 19:'Cement • slides 31–33', 20:'Cement • slides 21–24',
+  21:'Cement • slides 46–48', 22:'Cement • slide 14', 23:'Cement • slides 28–30',
+  24:'Cement • slides 11–12', 25:'Cement • slide 13', 26:'Cement • slide 25',
+  27:'Cement • slide 20', 28:'Cement • slide 47', 29:'Cement • slide 5'
 };
 function lectureNote(q,i){
  var ref=aggSlides[i]||q.slide||q.unit+' lecture';
@@ -288,6 +292,38 @@ function lessonTable(title,headers,rows,note,focus){
  return x;
 }
 function specialNotes(i){
+ if(i===18||i===27){
+   return lessonTable('⚗️ مركبات الأسمنت الأساسية — محاضرة الأسمنت',['المركب','الدور الأساسي','تذكُّر سريع'],
+   [['C₃S','Early strength','مقاومة مبكرة'],['C₂S','Later strength','مقاومة متأخرة'],['C₃A','Sulfate sensitivity / fast reaction','حساس للكَبريتات'],['C₄AF','Minor contribution / colour','تأثير أقل في المقاومة']],
+   'سلايدات 20 و25 من محاضرة الأسمنت: سؤال 19 عن C₃A، وسؤال 28 عن C₃S.',i===18?2:0);
+ }
+ if(i===19){
+   return lessonTable('🌡️ عوامل حرارة إماهة الأسمنت — سلايد 33',['العامل المذكور','التأثير'],
+   [['Chemical composition','يؤثر على كمية الحرارة الناتجة'],['Cement fineness','يرفع سرعة الإماهة'],['Percentage of gypsum','يؤثر على تفاعل C₃A'],['Water/cement ratio','مذكور ضمن عوامل حرارة الإماهة']],
+   'درجة حرارة الجو والرطوبة الخارجية تؤثر في انتقال وفقد الحرارة، لكنها ليست الإجابة المقصودة في استثناء هذا السؤال.');
+ }
+ if(i===20||i===23||i===26){
+   return lessonTable('🧪 تفاعل الألومينات والجبس — سلايدات 22–25 و28–30',['المرحلة / المادة','نتيجتها'],
+   [['C₃A + Gypsum + Water','AFt (Ettringite) أولًا'],['Gypsum','تنظيم زمن الشك ومنع Flash set'],['After sulfate depletion','قد يتكوّن AFm بدل AFt'],['High early temperature 70–100°C','قد يظهر Delayed Ettringite Formation بعد التبريد']],
+   'في سؤال 21: AFt. في سؤال 24: تنظيم الشك. في سؤال 27: Delayed ettringite.',i===20?0:i===23?1:3);
+ }
+ if(i===21||i===28){
+   return lessonTable('⚠️ Unsoundness — سلايدات 46–48',['المصدر / الحالة','التأثير'],
+   [['Free CaO / Lime','يتفاعل مع الماء متأخرًا ويسبب تمددًا'],['Free MgO / Magnesia','قد يسبب تمددًا وعدم ثبات حجم'],['Improper raw proportioning','سبب تصنيعي لوجود الجير الحر'],['Inadequate grinding / burning','سبب مذكور في سلايد 47'],['Improper storage','ليس سبب تكوّن Free lime المذكور في سؤال 29']],
+   'مصدر السؤال 22 عدم ثبات حجم الأسمنت؛ مصدر سؤال 29 أسباب وجود الجير الحر.',i===28?4:0);
+ }
+ if(i===22){
+  return lessonTable('🧫 Chemical tests — سلايد 14',['الاختبار','دلالته'],[['Insoluble residue (IR)','مؤشر على impurities / adulteration'],['Loss on ignition (LOI)','مؤشر على تحلل أو كربنة أو تخزين غير سليم']], 'سؤال 23 يطلب تحديد المقياس المرتبط بـ Adulteration: IR.',0);
+ }
+ if(i===24){
+  return lessonTable('🔬 مركبات الأسمنت: طريقتان — سلايدات 11–12',['الطريقة','المخرجات'],[['X-ray diffraction (XRD)','تحديد الأطوار البلورية'],['Bogue equations','تقدير نسب المركبات من تحليل الأكاسيد']], 'السلايدين بيعرضوا XRD وBogue؛ الرموز A=Al₂O₃ وF=Fe₂O₃.',1);
+ }
+ if(i===25){
+  return lessonTable('⚖️ القلويات المكافئة — سلايد 13',['الكمية','المعنى'],[['0.64','معامل K₂O في قانون Na₂Oeq'],['0.6%','الحد المذكور في المحاضرة للقلويات المكافئة']], 'ما تخلطش بين 0.64 (معامل) و0.6% (حد).',1);
+ }
+ if(i===29){
+  return lessonTable('🏭 تصنيع الكلنكر ثم الأسمنت — سلايد 5',['الترتيب','العملية'],[['1','Quarrying and cutting stones'],['2','Crushing and raw material proportioning'],['3','Grinding raw materials'],['4','Heating in kiln (~1480°C)'],['5','Cooling of clinker'],['6','Grinding clinker with gypsum → cement']], 'إضافة الجبس تحصل بعد تكوين الكلنكر، فهي الاستثناء في سؤال 30.',5);
+ }
  if(i===12){
   return lessonTable('📊 اختيارات سؤال 13 وشرح كل اختصار', ['الاختيار','المقارنة بالمنحنى','الزيادة عند 5%'],
    [['FF','Fine grading · الرمل الناعم · الأحمر','الأعلى ✅'],
